@@ -8,11 +8,24 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
+const allowedOrigins = ['http://localhost:3000', 'https://icms2024-honi2302s-projects.vercel.app'];
+
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://icms2024-honi2302s-projects.vercel.app'],
-    methods: ['POST', 'GET', 'DELETE', 'PUT'],
+    origin: allowedOrigins,
+    methods: ['POST', 'GET', 'DELETE', 'PUT', 'OPTIONS'],
     credentials: true
 }));
+
+app.options('*', (req, res) => {
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, DELETE, PUT, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.sendStatus(200);
+});
 
 // Replace these with your actual email and the newly generated app password
 const transporter = nodemailer.createTransport({
