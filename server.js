@@ -8,7 +8,11 @@ const PORT = 5000;
 
 app.use(bodyParser.json());
 
-app.use(cors());
+app.use(cors({
+    origin:["https://icms2024-honi2302s-projects.vercel.app"],
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true
+}));
 
 // Replace these with your actual email and the newly generated app password
 const transporter = nodemailer.createTransport({
