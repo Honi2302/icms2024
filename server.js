@@ -8,6 +8,8 @@ const PORT = 5000;
 
 app.use(bodyParser.json());
 
+app.options('*', cors());
+
 app.use(cors({
     origin:["https://icms2024-honi2302s-projects.vercel.app"],
     methods: ["POST", "GET", "DELETE", "PUT"],
