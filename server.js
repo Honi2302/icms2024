@@ -31,8 +31,8 @@ app.options('*', (req, res) => {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'sarhoneysharma@gmail.com',
-        pass: 'vbczvillcrvhmsya'
+        user: 'icms2024.du@gmail.com',
+        pass: 'fkuubpbjjhgpdsvh'
     }
 });
 
@@ -41,7 +41,7 @@ app.post('/send-email', (req, res) => {
     console.log(req.body);
 
     const mailOptions = {
-        from: 'a2phinno@gmail.com',
+        from: 'icms2024.du@gmail.com',
         to: email,
         subject: 'Thank you for registration for ICMS 2024 event!',
         text: `Hi ${firstName} ${middleName} ${lastName},\n\nThanks ${firstName} ${middleName} ${lastName} for registering with us and booking a seat in the event.\n\nHere is the information submitted by you for booking a seat:\n\nName: ${title} ${firstName} ${middleName} ${lastName}\nGender: ${gender}\nDate Of Birth: ${dob}\nEmail: ${email}\nMobile Number: ${mobileNumber}\nAddress: ${address}\nDesignation: ${designation}\nOrganization: ${organization}\nAccommodation Needed: ${accomodationNeeded}\nAbstract Title: ${abstractTitle}\nAbstract Theme: ${theme}\nPayment Mode: ${PaymentMode}\n\nThanks & Regards,\n\nTeam ICMS.`
