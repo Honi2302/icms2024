@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
-const allowedOrigins = ['https://saritacharitabletrust.org', 'https://registration-form.icms2024.in','http://localhost:3000','https://my-admin.icms2024.in', 'https://my-admin.icms2024.in/admin/onlineBooking', 'https://my-admin.icms2024.in/admin/onlineUser/data/:id'];
+const allowedOrigins = ['https://saritacharitabletrust.org', 'https://saritacharitabletrust.org/send', 'https://registration-form.icms2024.in','http://localhost:3000','https://my-admin.icms2024.in', 'https://my-admin.icms2024.in/admin/onlineBooking', 'https://my-admin.icms2024.in/admin/onlineUser/data/:id'];
 
 app.use(cors({
     origin: allowedOrigins,
