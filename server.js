@@ -44,8 +44,8 @@ app.post('/send', (req, res) => {
     const mailOptions = {
         from: 'info@saritacharitabletrust.org',
         to: 'info@saritacharitabletrust.org',
-        subject: 'Thank you for registration for ICMS 2024 event!',
-        text: `Hi ${form_name},\n\n Phone ${form_phone} \n\n Here is the information submitted by you for booking a seat:\n\nName: ${form_email} \nGender: ${form_subject} ${form_message}\n`
+        subject: 'New contact form enquiry',
+        text: `Hi admin we received new contact enquiry \n\n\n\n Name : - ${form_name}, \n\n Email : - ${form_email}  \n\n Phone: -  ${form_phone} \n\n Subject: - ${form_subject} \n\n Message: ${form_message}\n`
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
